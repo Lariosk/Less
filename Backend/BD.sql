@@ -33,3 +33,10 @@ CREATE TABLE producto_categoria (
     FOREIGN KEY (producto_id) REFERENCES producto(id) ON DELETE CASCADE,            
     FOREIGN KEY (categoria_id) REFERENCES categoria(id) ON DELETE CASCADE
 );
+CREATE INDEX idx_nombre ON producto(nombre);
+CREATE INDEX idx_activo ON producto(activo);
+INSERT INTO producto (codigo, nombre, descripcion, precio, stock)
+VALUES 
+('P001', 'Laptop Lenovo', 'Laptop 16GB RAM', 18500.00, 10),
+('P002', 'Mouse Logitech', 'Mouse inalámbrico', 350.00, 50),
+('P003', 'Teclado Mecánico', 'Switch azul', 1200.00, 20);
